@@ -1,0 +1,56 @@
+[project]
+name = "oss-maintainer-compass"
+version = "0.1.0"
+description = "A lightweight CLI tool for open source maintainers to analyze and prioritize GitHub issue and PR backlogs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Psymath-code", email = "1215953049@qq.com"}]
+keywords = ["open-source", "maintenance", "github", "automation", "triage", "codex"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/Psymath-code/oss-maintainer-compass"
+Documentation = "https://github.com/Psymath-code/oss-maintainer-compass#readme"
+Repository = "https://github.com/Psymath-code/oss-maintainer-compass.git"
+Issues = "https://github.com/Psymath-code/oss-maintainer-compass/issues"
+Discussions = "https://github.com/Psymath-code/oss-maintainer-compass/discussions"
+
+[project.scripts]
+oss-maintainer-compass = "src.oss_maintainer_compass.main:main"
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["src.oss_maintainer_compass"]
+
+[tool.black]
+line-length = 100
+target-version = ['py310', 'py311', 'py312']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
